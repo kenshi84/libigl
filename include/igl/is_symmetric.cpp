@@ -49,8 +49,8 @@ IGL_INLINE bool igl::is_symmetric(
     return false;
   }
   assert(A.size() != 0);
-  SparseMatrix<AType> AT = A.transpose();
-  SparseMatrix<AType> AmAT = A-AT;
+  Eigen::SparseMatrix<AType> AT = A.transpose();
+  Eigen::SparseMatrix<AType> AmAT = A-AT;
   VectorXi AmATI,AmATJ;
   Matrix<AType,Dynamic,1> AmATV;
   find(AmAT,AmATI,AmATJ,AmATV);
